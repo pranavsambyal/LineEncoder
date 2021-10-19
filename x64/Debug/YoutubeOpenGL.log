@@ -1,0 +1,35 @@
+﻿  Main.cpp
+C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\Main.cpp(634,23): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\Main.cpp(722,22): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\Main.cpp(734,29): warning C4305: 'argument': truncation from 'double' to '_Ty'
+          with
+          [
+              _Ty=GLfloat
+          ]
+C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\Main.cpp(739,31): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\Main.cpp(765,43): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\Main.cpp(773,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\Main.cpp(776,16): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\Main.cpp(796,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\Main.cpp(800,16): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\Main.cpp(820,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\Main.cpp(844,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\Main.cpp(900,65): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\Main.cpp(901,85): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\Main.cpp(901,85): warning C4267: 'argument': conversion from 'size_t' to 'GLint', possible loss of data
+glfw3.lib(context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(context.obj)' or at 'C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(init.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(init.obj)' or at 'C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(input.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(input.obj)' or at 'C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(monitor.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(monitor.obj)' or at 'C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(vulkan.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(vulkan.obj)' or at 'C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(window.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(window.obj)' or at 'C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_init.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_init.obj)' or at 'C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_joystick.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_joystick.obj)' or at 'C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_monitor.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_monitor.obj)' or at 'C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_time.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_time.obj)' or at 'C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_thread.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_thread.obj)' or at 'C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(win32_window.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(win32_window.obj)' or at 'C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(wgl_context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(wgl_context.obj)' or at 'C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(egl_context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(egl_context.obj)' or at 'C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\x64\Debug\glfw.pdb'; linking object as if no debug info
+glfw3.lib(osmesa_context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(osmesa_context.obj)' or at 'C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\x64\Debug\glfw.pdb'; linking object as if no debug info
+  YoutubeOpenGL.vcxproj -> C:\Users\Pranav\Documents\CODE\C++ Graphics\opengl-tutorials\YoutubeOpenGL 2 - Triangle\x64\Debug\YoutubeOpenGL.exe
