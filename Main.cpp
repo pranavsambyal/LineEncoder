@@ -83,12 +83,50 @@ string randomInput(int l, int prob)
     }
     else if (prob == 3)
     {
-        const char chars[20] = { '0', '0', '0', '0', '1', '0', '0', '0', '0', '1', '0', '0', '0', '0', '1', '0', '0', '0', '0', '0' };
-        int sz = 20;
-        for (int i = 0; i < l; i++)
+        if (l > 4) {
+            const char chars[4] = { '1', '1', '1', '1' };
+            int sz = 5;
+            for (int i = 0; i < l; i++)
+            {
+                int Index = rand() % sz;
+                if (Index == 4) {
+                    if ((l - i) >= 8) 
+                    {
+                        for (int i = 0; i < 8; i++)
+                        {
+                            s.push_back('0');
+                        }
+                        i += 7;
+                    }
+                    else if((l - i) >= 4)
+                    {
+                        for (int i = 0; i < 4; i++)
+                        {
+                            s.push_back('0');
+                        }
+                        i += 3;
+                    }
+                    else
+                    {
+                        s.push_back('0');
+                    }
+                }
+                else
+                {
+                    s.push_back(chars[Index]);
+                }
+            }
+        }
+        else
         {
-            int Index = rand() % sz;
-            s.push_back(chars[Index]);
+            cout << "\tSize is <=4, Cant add 4/8 zeros\n\tUsing 2nd option for the given input\n";
+            const char chars[4] = { '0', '1', '0', '0' };
+            int sz = 4;
+            for (int i = 0; i < l; i++)
+            {
+                int Index = rand() % sz;
+                s.push_back(chars[Index]);
+            }
         }
     }
     return s;
@@ -386,7 +424,7 @@ vector <int> b45(vector<int>&a)
         y++;
         if (y == 4) 
         {
-            cout << s << endl;
+            //cout << s << endl;
             pair<int, vector<int>> table[16];
             table[0].first = 0;
             table[0].second = { 1,1,1,1,0 };
@@ -471,14 +509,14 @@ vector <int> b8zs(vector<int>& a)
         {
             
             count = 1;
-            cout << i;
-            cout<<"   Count:"<<count<<endl;
+            //cout << i;
+            //cout<<"   Count:"<<count<<endl;
             for (int j = 1; ((j < 8)&&((j+i)<b.size())); j++)
             {
                 if (b[i + j] == 0)
                 {
                     count++;
-                    cout << "    Count:" << count <<"Val at i="<<i+j<<"Is "<< b[i + j] << endl;
+                    //cout << "    Count:" << count <<"Val at i="<<i+j<<"Is "<< b[i + j] << endl;
                 }
                 else
                 {
@@ -487,7 +525,7 @@ vector <int> b8zs(vector<int>& a)
             }
             if (count == 8)
             {
-                    cout << "Count is 8 here" << endl;
+                    //cout << "Count is 8 here" << endl;
                     r.push_back(0);
                     r.push_back(0);
                     r.push_back(0);
@@ -528,14 +566,14 @@ vector <int> hdb3(vector<int>& a)
         if (b[i]==0)
         {
             count = 1;
-            cout << i;
-            cout << "  Count:" << count << endl;
+            //cout << i;
+            //cout << "  Count:" << count << endl;
             for (int j = 1; ((j < 4) && ((j + i) < b.size())); j++)
             {
                 if (b[i + j] == 0)
                 {
                     count++;
-                    cout << "   Count:" << count << "Val at i=" << i + j << "Is " << b[i + j] << endl;
+                    //cout << "   Count:" << count << "Val at i=" << i + j << "Is " << b[i + j] << endl;
                 }
                 else
                 {
@@ -544,10 +582,10 @@ vector <int> hdb3(vector<int>& a)
             }
             if (count == 4)
             {
-                cout <<"    Count is 4 here" << endl;
+                //cout <<"    Count is 4 here" << endl;
                 if(parity==1)
                 {
-                    cout << "parity==" << parity<<endl;
+                    //cout << "parity==" << parity<<endl;
                     r.push_back(0);
                     r.push_back(0);
                     r.push_back(0);
@@ -557,7 +595,7 @@ vector <int> hdb3(vector<int>& a)
                 }
                 else if(parity == 0)
                 {
-                    cout << "parity==" << parity << endl;
+                    //cout << "parity==" << parity << endl;
                     prev = prev * -1;
                     r.push_back(prev);
                     r.push_back(0);
@@ -933,7 +971,7 @@ int main()
     {
         cout << "Enter the lenght of input\n";
         cin >> l;
-        cout << "Choose probability of 0 to 1\n1:50:50\n2:75:25\n3:85:15\n";
+        cout << "Choose probability of 0 to 1\n1:50:50\n2:75:25\n3:With 4 or 8 consecutive zeros\n\n\tPress Any other key to Exit Program\n";
         int prob;
         cin >> prob;
         s = randomInput(l, prob);
@@ -956,6 +994,7 @@ int main()
     vo = str2vect(s);
     cout << "\n\t";
     printvect(vo);
+    lps(vo);
     while (true)
     {
     start:
@@ -965,7 +1004,8 @@ int main()
             << "\t3:Biphase\n"
             << "\t4:Bipolar(multilevel binary)\n"
             << "\t5:Block Coading\n"
-            << "\t6:Scrambling AMI\n";
+            << "\t6:Scrambling AMI\n"
+            << "\n\tPress Any other key to Exit Program\n";
         cout << "->";
         int ch;
         cin >> ch;
@@ -980,7 +1020,8 @@ int main()
                     << "\t2:Polar NRZ-L Negetive Logic {1='-1',0='+1'}\n"
                     << "\t3:Polar NRZ-I Negetive Logic {1='Invesion',0='No Change'}\n"
                     << "\t4:Polar NRZ-I Negetive Logic {1='No Change',0='Inversion'}\n"
-                    << "\t5:Go to previous menu\n";
+                    << "\t5:Go to previous menu\n"
+                    << "\n\tPress Any other key to Exit Program\n";
                 cout << "->";
                 cin >> l;
                 switch (l)
@@ -992,7 +1033,6 @@ int main()
                     printvect(vo);
                     cout << "\tNRZ-L Positive logic encoded data\n\t";
                     printvect(vr);
-                    lps(vo);
                     char name[] = "Pranav's Line Encoder Original Vs NRZ-L Positive logic";
                     draw(vo,vr,1,name);
                     break;
@@ -1004,7 +1044,6 @@ int main()
                     printvect(vo);
                     cout << "\tNRZ-L Negetive logic encoded data\n\t";
                     printvect(vr);
-                    lps(vo);
                     char name[] = "Pranav's Line Encoder Original Vs NRZ-L Negetive logic";
                     draw(vo, vr,1,name);
                     break;
@@ -1017,7 +1056,6 @@ int main()
                     cout << "\tNRZ-I Positive logic encoded data\n\t";
                     cout << "Start(1)->";
                     printvect(vr);
-                    lps(vo);
                     char name[] = "Pranav's Line Encoder Original Vs NRZ-I Positive logic";
                     draw(vo, vr,1,name);
                     break;
@@ -1030,7 +1068,6 @@ int main()
                     cout << "\tNRZ-I Negetive logic encoded data\n\t";
                     cout << "Start(1)->";
                     printvect(vr);
-                    lps(vo);
                     char name[] = "Pranav's Line Encoder Original Vs NRZ-I Negetive logic";
                     draw(vo, vr,1,name);
                     break;
@@ -1054,7 +1091,8 @@ int main()
                 cout << "\nEnter the type of RZ encoding you what:--\n\n"
                     << "\t1:Polar RZ Positive Logic {1='+10',0='-10'}\n"
                     << "\t2:Polar RZ Negetive Logic {1='-10',0='+10'}\n"
-                    << "\t3:Go to previous menu\n";
+                    << "\t3:Go to previous menu\n"
+                    << "\n\tPress Any other key to Exit Program\n";
                 cin >> l;
                 switch (l)
                 {
@@ -1065,7 +1103,6 @@ int main()
                     printvect(vo);
                     cout << "\tRZ Positive logic encoded data\n\t";
                     printvect(vr);
-                    lps(vo);
                     char name[] = "Pranav's Line Encoder Original Vs RZ Positive logic";
                     draw(vo, vr, 2,name);
                     break;
@@ -1077,7 +1114,6 @@ int main()
                     printvect(vo);
                     cout << "\tRZ Negetive logic encoded data\n\t";
                     printvect(vr);
-                    lps(vo);
                     char name[] = "Pranav's Line Encoder Original Vs RZ Negetive logic";
                     draw(vo, vr, 2,name);
                     break;
@@ -1103,7 +1139,8 @@ int main()
                     << "\t2:Biphase Manchester(RZ + NRZ-L) {IEEE 802.3}->{1='-1+1',0='+1-1'}\n"
                     <<"\t3:Biphase Differential Manchester(RZ + NRZ-I)->{1='Transition',0='No Transition'}\n"
                     <<"\t4:Biphase Differential Manchester(RZ + NRZ-I{Compliment})->{1='No Transition',0='Transition'}\n"
-                    << "\t5:Go to previous menu\n";
+                    << "\t5:Go to previous menu\n"
+                    << "\n\tPress Any other key to Exit Program\n";
                 cin >> l;
                 switch (l)
                 {
@@ -1114,7 +1151,6 @@ int main()
                     printvect(vo);
                     cout << "\tManchester encoded {G.E. Thomas} data\n\t";
                     printvect(vr);
-                    lps(vo);
                     char name[] = "Pranav's Line Encoder Original Vs Manchester {G.E. Thomas}";
                     draw(vo, vr, 2,name);
                     break;
@@ -1126,7 +1162,6 @@ int main()
                     printvect(vo);
                     cout << "\tManchester encoded {IEEE 802.3} data\n\t";
                     printvect(vr);
-                    lps(vo);
                     char name[] = "Pranav's Line Encoder Original Vs Manchester {IEEE 802.3}";
                     draw(vo, vr, 2,name);
                     break;
@@ -1138,7 +1173,6 @@ int main()
                     printvect(vo);
                     cout << "\tDifferential Manchester RZ + NRZ-I encoded data\n\t";
                     printvect(vr);
-                    lps(vo);
                     char name[] = "Pranav's Line Encoder Original Vs Differential Manchester";
                     draw(vo, vr, 2,name);
                     break;
@@ -1150,7 +1184,6 @@ int main()
                     printvect(vo);
                     cout << "\tDifferential Manchester RZ + NRZ-I{Compliment} encoded data\n\t";
                     printvect(vr);
-                    lps(vo);
                     char name[] = "Pranav's Line Encoder Original Vs Differential Manchester";
                     draw(vo, vr, 2,name);
                     break;
@@ -1174,7 +1207,8 @@ int main()
                 cout << "\nEnter the type of Bipolar(multilevel binary) encoding you what:--\n\n"
                     << "\t1:AMI (Alternate mark inversion)\n\t\t-> Neutral voltage represents 0 and 1 is represented by alternate + ve and -ve voltages\n"
                     << "\t2:Pseudoternary(converse of AMI)\n\t\t-> 1 represented by neutral and 0 by alternating levels\n"
-                    << "\t3:Go to previous menu\n";
+                    << "\t3:Go to previous menu\n"
+                    << "\n\tPress Any other key to Exit Program\n";
                 cin >> l;
                 switch (l)
                 {
@@ -1185,7 +1219,6 @@ int main()
                     printvect(vo);
                     cout << "\tAMI (Alternate mark inversion) encoded data\n\t";
                     printvect(vr);
-                    lps(vo);
                     char name[] = "Pranav's Line Encoder Original Vs AMI";
                     draw(vo, vr, 1,name);
                     break;
@@ -1197,7 +1230,6 @@ int main()
                     printvect(vo);
                     cout << "\tPseudoternary(converse of AMI)encoded data\n\t";
                     printvect(vr);
-                    lps(vo);
                     char name[] = "Pranav's Line Encoder Original Vs Pseudoternary";
                     draw(vo, vr, 1,name);
                     break;
@@ -1220,7 +1252,8 @@ int main()
             {
                 cout << "\nEnter the type of Bipolar(multilevel binary) encoding you what:--\n\n"
                     << "\t1:4B/5B\n"
-                    << "\t2:Go to previous menu\n";
+                    << "\t2:Go to previous menu\n"
+                    << "\n\tPress Any other key to Exit Program\n";
                 cin >> l;
                 switch (l)
                 {
@@ -1231,7 +1264,6 @@ int main()
                     printvect(vo);
                     cout << "\t4B/5B encoded data\n\t";
                     printvect(vr);
-                    lps(vo);
                     char name[] = "Pranav's Line Encoder Original Vs 4B/5B";
                     draw(vo, vr, 1,name);
                     break;
@@ -1255,7 +1287,8 @@ int main()
                 cout << "\nEnter the type of Scrambled encoding you what:--\n\n"
                     << "\t1:B8ZS (Bipolar with 8 zero substitution)\n\t\t->Replace 8 consecutive zeros by 000VB0VB\n"
                     << "\t2:HDB3 (High density Bipolar 3 zero)\n\t\t->In this 4 consecutive zeros are replaced by 000V or B00V to maintain\n\t\t number of non - zero pulses after substitution\n"
-                    << "\t3:Go to previous menu\n";
+                    << "\t3:Go to previous menu\n"
+                    << "\n\tPress Any other key to Exit Program\n";
                 cin >> l;
                 switch (l)
                 {
@@ -1269,7 +1302,6 @@ int main()
                     printvect(temp);
                     cout << "\tB8ZS Encoded data\n\t";
                     printvect(vr);
-                    lps(vo);
                     char name[] = "Pranav's Line Encoder Original Vs AMI";
                     draw(vo, temp, 1,name);
                     char name1[] = "Pranav's Line AMI Vs B8ZS";
@@ -1286,7 +1318,6 @@ int main()
                     printvect(temp);
                     cout << "\tHDB3 Encoded data\n\t";
                     printvect(vr);
-                    lps(vo);
                     char name[] = "Pranav's Line Encoder Original Vs AMI";
                     draw(vo, temp, 1, name);
                     char name1[] = "Pranav's Line AMI Vs HDB3";
@@ -1307,7 +1338,7 @@ int main()
         }
         default:
         {
-            cout << "Wrong input Exiting...\n";
+            cout << "Exiting...\nBye, Have a nice day \n";
             exit(1);
         }
         }

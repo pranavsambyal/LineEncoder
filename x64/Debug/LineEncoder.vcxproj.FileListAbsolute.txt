@@ -1,1 +1,2 @@
 C:\Users\Pranav\Documents\CODE\C++ Graphics\proj\x64\Debug\LineEncoder.exe
+C:\Users\Pranav\Documents\CODE\C++ Graphics\LineEncoder\x64\Debug\LineEncoder.exe
