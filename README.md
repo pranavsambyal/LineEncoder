@@ -1,5 +1,6 @@
 ## LineEncoder
 Line Encoder and Scrambler for data encoding techniques using C++ and OpenGL
+# [Project Report](Project%20Report.pdf)
 # Objective
   - Implement Line coding encoder and scrambler with random digital data generator
   - Line coding schemes implemented: NRZ-L, NRZ-I, RZ, Manchester, Differential Manchester, AMI.
@@ -13,5 +14,4 @@ Line Encoder and Scrambler for data encoding techniques using C++ and OpenGL
   - Language: C++ (c++17)
   - External Liberies used: GLFW,GLAD for implementing OpenGL
   - IDE:Visual Studio 2019
-  
 Follow the following [video](https://www.youtube.com/watch?v=45MIykWJ-C4) to set up your Visual Studio for the poject
